@@ -1,12 +1,9 @@
 import axios from 'axios'
-import {BasketProductType, ProductType} from "../app/types";
-import {lowerCountProductTC} from "./basketReduser";
-
+import {BasketProductType} from "../app/types";
 
 export const instance = axios.create({
-  baseURL: 'http://localhost:3000/',
+  baseURL: 'https://backend-pizza-shop.vercel.app/',
 })
-
 
 
 export const productsApi = {

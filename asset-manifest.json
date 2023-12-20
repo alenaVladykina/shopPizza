@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/shopPizza/static/css/main.5f8f7d7a.css",
+    "main.js": "/shopPizza/static/js/main.fb4a14e6.js",
+    "static/js/787.0895c116.chunk.js": "/shopPizza/static/js/787.0895c116.chunk.js",
+    "static/media/logo.svg": "/shopPizza/static/media/logo.3ac73b2e596e976ed222035d3973bcba.svg",
+    "static/media/basket.svg": "/shopPizza/static/media/basket.56b91b052dd531b08cb746cfe33ce3ab.svg",
+    "index.html": "/shopPizza/index.html",
+    "main.5f8f7d7a.css.map": "/shopPizza/static/css/main.5f8f7d7a.css.map",
+    "main.fb4a14e6.js.map": "/shopPizza/static/js/main.fb4a14e6.js.map",
+    "787.0895c116.chunk.js.map": "/shopPizza/static/js/787.0895c116.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5f8f7d7a.css",
+    "static/js/main.fb4a14e6.js"
+  ]
+}

@@ -1,0 +1,45 @@
+.button {
+  display: block;
+  padding: 10px 15px;
+  border: 1px solid #21722e;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 30px;
+  background-color: transparent;
+  color: #21722e;
+
+  &:hover {
+    background-color: #21722e;
+    color: #fff;
+    opacity: 1;
+  }
+
+  &:hover .titleContainer .count {
+    background-color: #fff;
+    color: #21722e;
+  }
+
+
+  .titleContainer {
+    display: flex;
+    max-height: 22px;
+    justify-content: center;
+
+
+    .count {
+      max-height: 100%;
+      border-radius: 50%;
+      border: 1px solid #21722e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      background-color: #21722e;
+      padding: 0 6px;
+      margin-left: 10px;
+    }
+  }
+}
+

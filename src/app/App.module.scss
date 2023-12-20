@@ -1,0 +1,26 @@
+.app {
+  max-width: 1300px;
+  position: relative;
+  margin: 0 auto;
+}
+
+
+@media screen and (min-width: 1023px) and (max-width: 1400px) {
+  .app {
+    max-width: 900px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .app {
+    max-width: 700px;
+  }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 767px) {
+  .app {
+    max-width: 90%;
+  }
+}
+

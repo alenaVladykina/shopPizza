@@ -1,0 +1,14 @@
+.backButton {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  background-color: inherit;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: #21722e;
+
+  .backButtonIcon {
+    margin-right: 30px;
+  }
+}

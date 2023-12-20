@@ -1,0 +1,56 @@
+
+.header {
+  width: 100%;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 1;
+
+  .logoContainer {
+    display: flex;
+
+    .logoImage {
+      display: block;
+      margin-right: 20px;
+      transform: rotate(145deg);
+    }
+
+    .logoTitle {
+      display: flex;
+      flex-direction: column;
+
+      .subTitle {
+        font-size: 16px;
+        color: #7b7b7b;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: .01em;
+        color: #000;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 479px) {
+  .header {
+
+    .logoContainer {
+      max-width: 200px;
+    }
+  }
+
+}
+
+
+

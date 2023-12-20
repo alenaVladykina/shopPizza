@@ -1,0 +1,39 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 70px;
+  background-color: #fff;
+
+  .list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+
+    .listItem {
+      margin-right: 20px;
+    }
+  }
+}
+
+
+
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .nav {
+    display: block;
+  }
+  .list{
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 479px) {
+  .nav {
+    display: none;
+  }
+}
+

@@ -29,3 +29,8 @@ export type ProductType = {
 
 
 export type ProductSortType = 'popular' | 'price' | null
+
+export type SelectListType = {
+  title: string,
+  value: string | null
+}

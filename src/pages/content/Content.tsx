@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
 import {fetchProductsTC} from "../../redusers/productsReduser";
-import {useAppDispatch, useAppSelector} from "../../app/store";
+import {useAppDispatch, useAppSelector} from "../../store/store";
 import {getBasket, getCocktail, getCoffee, getPizza} from "../../utils/selectors";
 import {addBasketProductTC} from "../../redusers/basketReduser";
-import {ProductType} from "../../app/types";
+import {ProductType} from "../../types/types";
 import {ProductList} from "./productList/ProductList";
 import s from './content.module.scss'
+
 
 export const Content = () => {
   const dispatch = useAppDispatch()

@@ -1,8 +1,8 @@
-import {BasketProductType} from "../app/types";
+import {BasketProductType} from "../types/types";
 import {Dispatch} from "react";
-import {productsApi} from "./productsApi";
+import {productsApi} from "../api/productsApi";
 import {ThunkAction} from "redux-thunk";
-import {AppActionsType, AppRootStateType, AppThunk} from "../app/store";
+import {AppActionsType, AppRootStateType, AppThunk} from "../store/store";
 
 export type InitialStateBasketType = {
   count: number

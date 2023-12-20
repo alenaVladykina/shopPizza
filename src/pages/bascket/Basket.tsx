@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import s from './basket.module.scss'
-import {useAppDispatch, useAppSelector} from "../../app/store";
+import {useAppDispatch, useAppSelector} from "../../store/store";
 import {
   addBasketProductTC,
   deleteBasketProductTC,
@@ -9,7 +9,7 @@ import {
 } from "../../redusers/basketReduser";
 import {getBasket} from "../../utils/selectors";
 import {BasketPizza} from "./basketPizza/BasketPizza";
-import {BasketProductType} from "../../app/types";
+import {BasketProductType} from "../../types/types";
 import {AddButton} from "../../components/button/AddButtom/AddButton";
 import {useNavigate} from "react-router-dom";
 import {ArrowButton} from "../../components/button/ArrowButton/ArrowButton";
@@ -90,12 +90,12 @@ export const Basket = () => {
               <span className={s.sumBasket}> {basket.sumBasket}</span>
             </p>
 
-            <AddButton title={'Оплатить'}
+            <AddButton disabled={true}
+                       title={'Оплатить'}
                        buttonType={'basketButton'}
                        addProduct={() => {
                        }}/>
           </div>
-
         </footer>
       </section>
     );

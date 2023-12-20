@@ -1,9 +1,10 @@
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
-  position: sticky;
-  top: 70px;
+  padding: 30px 0 30px 0;
+  //position: sticky;
+  //top: 70px;
   background-color: #fff;
 
   .list {
@@ -18,13 +19,11 @@
 }
 
 
-
-
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .nav {
     display: block;
   }
-  .list{
+  .list {
     padding: 0;
     margin-bottom: 20px;
   }
@@ -36,4 +35,3 @@
     display: none;
   }
 }
-

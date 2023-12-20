@@ -8,6 +8,10 @@
   font-weight: 700;
   color: #21722e;
 
+  &:hover {
+    opacity: 0.7;
+  }
+
   .backButtonIcon {
     margin-right: 30px;
   }

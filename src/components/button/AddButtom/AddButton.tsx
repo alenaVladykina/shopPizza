@@ -7,10 +7,17 @@ export type AddButtonPropsType = {
   title?: string
   count?: number | null
   buttonType: 'contentButton' | 'basketButton'
+  disabled?: boolean
 }
 
 
-export const AddButton: React.FC<AddButtonPropsType> = ({addProduct, buttonType, title, count}) => {
+export const AddButton: React.FC<AddButtonPropsType> = ({
+                                                          addProduct,
+                                                          buttonType,
+                                                          title,
+                                                          count,
+                                                          disabled
+                                                        }) => {
 
   const defaultStyle = (buttonType === 'contentButton' ?
     (count ? s.count : '')
@@ -19,7 +26,9 @@ export const AddButton: React.FC<AddButtonPropsType> = ({addProduct, buttonType,
 
   return (
     <button onClick={addProduct}
-            className={s.button}>
+            className={s.button}
+            disabled={disabled}
+    >
       <div className={s.titleContainer}>
         <span className={s.title}>{title}</span>
         <span className={defaultStyle}>{count}</span>

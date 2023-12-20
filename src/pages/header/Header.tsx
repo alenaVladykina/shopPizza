@@ -3,7 +3,7 @@ import s from './header.module.scss'
 import logoIcon from './../../assets/icons/logo.svg'
 import {ButtonBasket} from "../../components/button/ButtonBascket/ButtonBasket";
 import {useNavigate} from "react-router-dom";
-import {useAppDispatch, useAppSelector} from "../../app/store";
+import {useAppDispatch, useAppSelector} from "../../store/store";
 import {getBasket} from "../../utils/selectors";
 import {fetchBasket} from "../../redusers/basketReduser";
 

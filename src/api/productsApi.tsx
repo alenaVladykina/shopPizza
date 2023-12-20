@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {BasketProductType} from "../app/types";
+import {BasketProductType} from "../types/types";
 
 export const instance = axios.create({
   baseURL: 'https://backend-pizza-shop.vercel.app/',

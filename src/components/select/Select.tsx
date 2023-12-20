@@ -1,6 +1,6 @@
-import React, {DetailedHTMLProps, SelectHTMLAttributes} from 'react';
+import React, {ChangeEvent, DetailedHTMLProps, SelectHTMLAttributes} from 'react';
 import s from './select.module.scss'
-import {SelectListType} from "../../pages/toolBar/ToolBar";
+import {SelectListType} from "../../types/types";
 
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>,
@@ -20,7 +20,7 @@ export const Select: React.FC<SelectPropsType> = ({
                                                   }) => {
 
 
-  const onClickSelect = (e: any) => {
+  const onClickSelect = (e: ChangeEvent<HTMLSelectElement>) => {
     onChangeOption(e.target.value)
   }
 

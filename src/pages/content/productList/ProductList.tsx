@@ -1,8 +1,9 @@
 import React from 'react';
 import s from "./productList.module.scss";
 import {Product} from "../../../components/product/Product";
-import {ProductType} from "../../../app/types";
+import {ProductType} from "../../../types/types";
 import {InitialStateBasketType} from "../../../redusers/basketReduser";
+
 
 type ProductList = {
   item: ProductType[]
@@ -17,8 +18,9 @@ export const ProductList: React.FC<ProductList> = ({
                                                      addBasketProduct,
                                                      basket,
                                                      title,
-                                                     id
+                                                     id,
                                                    }) => {
+
   return (
     <section>
       <h2 className={s.h2} id={id}>{title}</h2>

@@ -1,16 +1,25 @@
-import {createBrowserRouter} from 'react-router-dom';
+import {createHashRouter} from 'react-router-dom';
 import {App} from "../app/App";
 import {Basket} from "../pages/bascket/Basket";
 import React from "react";
-import {MainPage} from "./MainPage";
+import {Content} from "../pages/content/Content";
+import {ToolBar} from "../pages/toolbar/Toolbar";
 
+
+const MainPage = () => {
+  return (
+    <>
+      <ToolBar/>
+      <Content/>
+    </>
+  )
+}
 
 const childrenRoute = [
   {
     path: "/",
     element: <MainPage/>,
   },
-
   {
     path: "/basket",
     element: <Basket/>,
@@ -19,7 +28,7 @@ const childrenRoute = [
 ]
 
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     element: <App/>,
     children: childrenRoute

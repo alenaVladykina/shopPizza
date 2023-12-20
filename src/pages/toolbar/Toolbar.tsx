@@ -1,11 +1,10 @@
 import React from 'react';
 import {ButtonFilter} from "../../components/button/ButtonFilter/ButtonFilter";
-import s from './toolBat.module.scss'
+import s from './toolbar.module.scss'
 import {Select} from "../../components/select/Select";
-import {useAppDispatch} from "../../app/store";
 import {fetchProductsTC, sortProductsPopularTC, sortProductsPriceTC} from "../../redusers/productsReduser";
-import {ProductSortType} from "../../app/types";
-
+import {useAppDispatch} from "../../store/store";
+import {ProductSortType} from "../../types/types";
 
 export type SelectListType = {
   title: string,
@@ -58,9 +57,6 @@ export const ToolBar = () => {
 
   return (
     <nav className={s.nav}>
-      <ul className={s.list}>
-        {buttons}
-      </ul>
       <div>
         <Select onChangeOption={onChangeOption}
                 selectList={selectList}/>

@@ -26,7 +26,6 @@ export type BasketActionType =
 export const basketReduser = (state: InitialStateBasketType = InitialState, action: BasketActionType): InitialStateBasketType => {
   switch (action.type) {
     case "BASKET/GET" :
-      console.log(action.products)
       return action.products
 
     case "BASKET/POST" : {

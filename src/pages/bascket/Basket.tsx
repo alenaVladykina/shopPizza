@@ -88,7 +88,7 @@ export const Basket = () => {
             <span className={s.count}> {basket.count}</span>
           </p>
           <div className={s.footerPrice}>
-            <p>Сумма заказа:
+            <p className={s.priceTitle}>Сумма заказа:
               <span className={s.sumBasket}> {basket.sumBasket}</span>
             </p>
 

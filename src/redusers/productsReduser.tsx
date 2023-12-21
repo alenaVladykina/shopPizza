@@ -13,8 +13,6 @@ const initialProductsState: ProductsType = {
 export const productsReduser = (state: ProductsType = initialProductsState, action: ProductsActionsType): ProductsType => {
   switch (action.type) {
     case 'PRODUCTS/GET' : {
-      console.log(action.products.itemCocktail)
-      // debugger
       return action.products
     }
     case 'PRODUCTS/SORT-POPULAR' : {

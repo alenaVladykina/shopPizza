@@ -13,13 +13,13 @@ type ProductList = {
   id: string
 }
 
-export const ProductList: React.FC<ProductList> = ({
-                                                     item,
-                                                     addBasketProduct,
-                                                     basket,
-                                                     title,
-                                                     id,
-                                                   }) => {
+export const ProductList: React.FC<ProductList> = React.memo(({
+                                                                item,
+                                                                addBasketProduct,
+                                                                basket,
+                                                                title,
+                                                                id,
+                                                              }) => {
 
   return (
     <section>
@@ -51,5 +51,5 @@ export const ProductList: React.FC<ProductList> = ({
       </div>
     </section>
   );
-};
+});
 

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {fetchProductsTC} from "../../redusers/productsReduser";
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {getBasket, getCocktail, getCoffee, getPizza} from "../../utils/selectors";
@@ -21,14 +21,14 @@ export const Content = () => {
   }, [])
 
 
-  const addBasketProduct = (product: ProductType) => {
+  const addBasketProduct = useCallback((product: ProductType) => {
     const newProduct = {
       ...product,
       sumProduct: 0,
       count: 0
     }
     dispatch(addBasketProductTC(newProduct))
-  }
+  }, [])
 
 
   return (

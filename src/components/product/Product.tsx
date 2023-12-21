@@ -15,16 +15,16 @@ type PizzaPropsType = {
   popular: number
 }
 
-export const Product: React.FC<PizzaPropsType> = ({
-                                                    title,
-                                                    description,
-                                                    price,
-                                                    urlWebp,
-                                                    urlPng,
-                                                    addProduct,
-                                                    popular,
-                                                    count
-                                                  }) => {
+export const Product: React.FC<PizzaPropsType> = React.memo(({
+                                                               title,
+                                                               description,
+                                                               price,
+                                                               urlWebp,
+                                                               urlPng,
+                                                               addProduct,
+                                                               popular,
+                                                               count
+                                                             }) => {
 
 
   return (
@@ -61,4 +61,4 @@ export const Product: React.FC<PizzaPropsType> = ({
       </footer>
     </article>
   );
-};
+})

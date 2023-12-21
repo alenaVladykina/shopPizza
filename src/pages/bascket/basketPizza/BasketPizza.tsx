@@ -15,20 +15,19 @@ type BasketPizzaPropsType = {
   setSumBasket?: () => void
 }
 
-export const BasketPizza: React.FC<BasketPizzaPropsType> = ({
-                                                              id,
-                                                              title,
-                                                              price,
-                                                              urlPng,
-                                                              urlWebp,
-                                                              deleteProduct,
-                                                              count,
-                                                              addProduct,
-                                                              onClickLowerCount,
-                                                              sumProduct,
-                                                              setSumBasket
-                                                            }) => {
-
+export const BasketPizza: React.FC<BasketPizzaPropsType> = React.memo(({
+                                                                         id,
+                                                                         title,
+                                                                         price,
+                                                                         urlPng,
+                                                                         urlWebp,
+                                                                         deleteProduct,
+                                                                         count,
+                                                                         addProduct,
+                                                                         onClickLowerCount,
+                                                                         sumProduct,
+                                                                         setSumBasket
+                                                                       }) => {
 
 
   return (
@@ -72,4 +71,4 @@ export const BasketPizza: React.FC<BasketPizzaPropsType> = ({
       </div>
     </div>
   );
-};
+});

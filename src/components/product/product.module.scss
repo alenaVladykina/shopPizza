@@ -87,6 +87,8 @@
 
       .starContainer {
         height: 90px;
+        right:0;
+        top: 0;
       }
 
       .star {
@@ -101,10 +103,11 @@
     .main {
       .title {
         font-size: 26px;
+        max-height: inherit;
       }
 
       .subtitle {
-        height: inherit;
+        max-height:inherit;
         overflow: auto;
         font-size: 22px;
       }
@@ -114,18 +117,15 @@
 
 @media screen and (min-width: 360px) and (max-width: 479px) {
   .pizza {
-    max-width: 100%;
-    max-height: inherit;
-  }
-  .main {
-    .title {
-      font-size: 26px;
-    }
+    max-width: 90%;
+    height: inherit;
 
     .imagesContainer {
 
       .starContainer {
         height: 90px;
+        right:0;
+        top: 0;
       }
 
       .star {
@@ -137,10 +137,17 @@
       }
     }
 
-    .subtitle {
-      height: inherit;
-      overflow: auto;
-      font-size: 22px;
+    .main {
+      .title {
+        font-size: 26px;
+        max-height: inherit;
+      }
+
+      .subtitle {
+        max-height:inherit;
+        overflow: auto;
+        font-size: 22px;
+      }
     }
   }
 }

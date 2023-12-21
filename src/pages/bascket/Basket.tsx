@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import s from './basket.module.scss'
 import {useAppDispatch, useAppSelector} from "../../store/store";
 import {
@@ -28,17 +28,19 @@ export const Basket = () => {
   const basketLength = basket.items.length
 
 
-  const deleteProduct = (productId: string) => {
+  const deleteProduct = useCallback((productId: string) => {
     dispatch(deleteBasketProductTC(productId))
-  }
+  }, [])
 
-  const addProduct = (product: BasketProductType) => {
+  const addProduct = useCallback((product: BasketProductType) => {
     dispatch(addBasketProductTC(product))
-  }
+  }, [])
 
-  const lowerCount = (productId: string) => {
+  const lowerCount = useCallback((productId: string) => {
     dispatch(lowerCountProductTC(productId))
-  }
+  }, [])
+
+
   const navigateToContent = () => {
     navigate('/')
   }

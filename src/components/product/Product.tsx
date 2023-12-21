@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './product.module.scss'
 import {AddButton} from "../button/AddButtom/AddButton";
+import star from './../../assets/icons/star.svg'
 
 type PizzaPropsType = {
   id: string
@@ -11,6 +12,7 @@ type PizzaPropsType = {
   urlWebp: string
   addProduct: () => void
   count: number | null
+  popular: number
 }
 
 export const Product: React.FC<PizzaPropsType> = ({
@@ -20,16 +22,27 @@ export const Product: React.FC<PizzaPropsType> = ({
                                                     urlWebp,
                                                     urlPng,
                                                     addProduct,
+                                                    popular,
                                                     count
                                                   }) => {
 
 
   return (
     <article className={s.pizza}>
-      <picture>
-        <source srcSet={urlWebp} />
+      <div className={s.imagesContainer}>
+        <div className={s.starContainer}>
+          <img src={star}
+               className={s.star}
+               alt={'rating image'}/>
+          <span className={s.starTitle}>{popular}</span>
+        </div>
+
+        <picture>
+          <source srcSet={urlWebp}/>
           <img className={s.img} src={urlPng} alt={'картинка товара'}/>
-      </picture>
+        </picture>
+      </div>
+
       <main className={s.main}>
         <p className={s.title}>
           {title}
@@ -47,5 +60,5 @@ export const Product: React.FC<PizzaPropsType> = ({
         />
       </footer>
     </article>
-);
+  );
 };

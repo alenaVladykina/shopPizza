@@ -44,6 +44,7 @@ export const ProductList: React.FC<ProductList> = ({
                      urlWebp={product.urlWebp}
                      addProduct={onClickHandler}
                      count={count}
+                     popular={product.popular}
             />
           )
         })}

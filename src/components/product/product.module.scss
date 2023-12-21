@@ -1,29 +1,60 @@
 .pizza {
-  display: block;
+  display: flex;
   max-width: 300px;
-  max-height: 500px;
+  height: 520px;
   margin-bottom: 40px;
+  flex-direction: column;
+  justify-content: space-between;
 
   .img {
     display: block;
     width: 100%;
   }
 
-  .main {
-    margin-bottom: 30px;
+  .imagesContainer {
+    position: relative;
 
+    .starContainer {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 55px;
+      right: -5px;
+      top: -10px;
+    }
+
+    .star {
+      position: absolute;
+      top: 0;
+      height: 50px;
+    }
+
+    .starTitle {
+      z-index: 1;
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+
+
+  .main {
     .title {
       font-size: 22px;
+      line-height: 1;
+      max-height: 44px;
       font-weight: 500;
       align-items: center;
+      overflow: hidden;
     }
 
     .subtitle {
       color: rgb(92, 99, 112);
       font-size: 16px;
       max-width: 100%;
-      height: 55px;
+      max-height: 60px;
       overflow: hidden;
+      line-height: 1.3;
     }
   }
 
@@ -50,7 +81,34 @@
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .pizza {
     max-width: 80%;
-    max-height: inherit;
+    height: inherit;
+
+    .imagesContainer {
+
+      .starContainer {
+        height: 90px;
+      }
+
+      .star {
+        height: 80px;
+      }
+
+      .starTitle {
+        font-size: 20px;
+      }
+    }
+
+    .main {
+      .title {
+        font-size: 26px;
+      }
+
+      .subtitle {
+        height: inherit;
+        overflow: auto;
+        font-size: 22px;
+      }
+    }
   }
 }
 
@@ -58,5 +116,31 @@
   .pizza {
     max-width: 100%;
     max-height: inherit;
+  }
+  .main {
+    .title {
+      font-size: 26px;
+    }
+
+    .imagesContainer {
+
+      .starContainer {
+        height: 90px;
+      }
+
+      .star {
+        height: 80px;
+      }
+
+      .starTitle {
+        font-size: 20px;
+      }
+    }
+
+    .subtitle {
+      height: inherit;
+      overflow: auto;
+      font-size: 22px;
+    }
   }
 }

@@ -1,7 +1,5 @@
 import React from 'react';
 import s from './ButtonFilter.module.scss'
-import {Link} from "react-scroll";
-import {HashLink, NavHashLink} from "react-router-hash-link";
 
 type ButtonFilterType = {
   onClick?: () => void

@@ -1,6 +1,6 @@
 import React, {ChangeEvent, DetailedHTMLProps, SelectHTMLAttributes} from 'react';
 import s from './select.module.scss'
-import {SelectListType} from "../../types/types";
+import {SelectListType} from "../../commons/types";
 
 
 type DefaultSelectPropsType = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>,

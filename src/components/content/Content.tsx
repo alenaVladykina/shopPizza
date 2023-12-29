@@ -1,9 +1,9 @@
 import React, {useCallback, useEffect} from 'react';
 import {fetchProductsTC} from "../../redusers/productsReduser";
 import {useAppDispatch, useAppSelector} from "../../store/store";
-import {getBasket, getCocktail, getCoffee, getPizza} from "../../utils/selectors";
+import {getBasket, getCocktail, getCoffee, getPizza} from "../../commons/selectors";
 import {addBasketProductTC} from "../../redusers/basketReduser";
-import {ProductType} from "../../types/types";
+import {ProductType} from "../../commons/types";
 import {ProductList} from "./productList/ProductList";
 import s from './content.module.scss'
 
@@ -19,6 +19,7 @@ export const Content = () => {
   useEffect(() => {
     dispatch(fetchProductsTC())
   }, [])
+
 
 
   const addBasketProduct = useCallback((product: ProductType) => {

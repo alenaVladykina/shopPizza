@@ -1,9 +1,9 @@
 import {createHashRouter} from 'react-router-dom';
 import {App} from "../app/App";
-import {Basket} from "../pages/bascket/Basket";
+import {Basket} from "../components/bascket/Basket";
 import React from "react";
-import {Content} from "../pages/content/Content";
-import {ToolBar} from "../pages/toolbar/Toolbar";
+import {Content} from "../components/content/Content";
+import {ToolBar} from "../components/toolbar/Toolbar";
 
 
 const MainPage = () => {

@@ -1,6 +1,6 @@
 import {Dispatch} from "react";
 import {productsApi} from "../api/productsApi";
-import {ProductsType} from "../types/types";
+import {ProductsType} from "../commons/types";
 
 
 const initialProductsState: ProductsType = {

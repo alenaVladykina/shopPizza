@@ -1,9 +1,23 @@
 import axios from 'axios'
-import {BasketProductType} from "../types/types";
+import {BasketProductType} from "../commons/types";
 
 export const instance = axios.create({
-  baseURL: 'https://backend-pizza-shop.vercel.app/',
+  baseURL: 'https://backend-pizza-shop.vercel.app/'
 })
+
+axios.defaults.withCredentials = true;
+
+axios.interceptors.request.use(function (config) {
+    console.log('Main interceptor success')
+    config.withCredentials = true;
+    return config;
+  },
+  function (error) {
+    // Do something with request error
+    console.log('Main interceptor error')
+    return Promise.reject(error);
+  }
+)
 
 
 export const productsApi = {

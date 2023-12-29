@@ -2,27 +2,17 @@ import React from 'react';
 import s from './product.module.scss'
 import {AddButton} from "../button/AddButtom/AddButton";
 import star from './../../assets/icons/star.svg'
+import {ProductType} from "../../commons/types";
 
 type PizzaPropsType = {
-  id: string
-  title: string
-  description: string
-  price: number
-  urlPng: string
-  urlWebp: string
   addProduct: () => void
+  data: ProductType
   count: number | null
-  popular: number
 }
 
 export const Product: React.FC<PizzaPropsType> = React.memo(({
-                                                               title,
-                                                               description,
-                                                               price,
-                                                               urlWebp,
-                                                               urlPng,
                                                                addProduct,
-                                                               popular,
+                                                               data,
                                                                count
                                                              }) => {
 
@@ -34,25 +24,25 @@ export const Product: React.FC<PizzaPropsType> = React.memo(({
           <img src={star}
                className={s.star}
                alt={'rating image'}/>
-          <span className={s.starTitle}>{popular}</span>
+          <span className={s.starTitle}>{data.popular}</span>
         </div>
 
         <picture>
-          <source srcSet={urlWebp}/>
-          <img className={s.img} src={urlPng} alt={'картинка товара'}/>
+          <source srcSet={data.urlWebp}/>
+          <img className={s.img} src={data.urlPng} alt={'картинка товара'}/>
         </picture>
       </div>
 
       <main className={s.main}>
         <p className={s.title}>
-          {title}
+          {data.title}
         </p>
         <p className={s.subtitle}>
-          {description}
+          {data.description}
         </p>
       </main>
       <footer className={s.footer}>
-        <span className={s.price}>от {price}</span>
+        <span className={s.price}>от {data.price}</span>
         <AddButton title={'+ Добавить'}
                    buttonType={'contentButton'}
                    addProduct={addProduct}

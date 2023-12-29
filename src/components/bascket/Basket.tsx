@@ -1,18 +1,19 @@
 import React, {useCallback, useEffect} from 'react';
 import s from './basket.module.scss'
-import {useAppDispatch, useAppSelector} from "../../store/store";
+import {AppThunk, useAppDispatch, useAppSelector} from "../../store/store";
 import {
   addBasketProductTC,
   deleteBasketProductTC,
   fetchBasket,
   lowerCountProductTC
 } from "../../redusers/basketReduser";
-import {getBasket} from "../../utils/selectors";
+import {getBasket} from "../../commons/selectors";
 import {BasketPizza} from "./basketPizza/BasketPizza";
-import {BasketProductType} from "../../types/types";
-import {AddButton} from "../../components/button/AddButtom/AddButton";
+import {BasketProductType} from "../../commons/types";
+import {AddButton} from "../button/AddButtom/AddButton";
 import {useNavigate} from "react-router-dom";
-import {ArrowButton} from "../../components/button/ArrowButton/ArrowButton";
+import {ArrowButton} from "../button/ArrowButton/ArrowButton";
+import {sumProduct} from "../../commons/utils";
 
 
 export const Basket = () => {
@@ -25,19 +26,11 @@ export const Basket = () => {
     dispatch(fetchBasket())
   }, [])
 
-  const basketLength = basket.items.length
 
-
-  const deleteProduct = useCallback((productId: string) => {
-    dispatch(deleteBasketProductTC(productId))
-  }, [])
-
-  const addProduct = useCallback((product: BasketProductType) => {
-    dispatch(addBasketProductTC(product))
-  }, [])
-
-  const lowerCount = useCallback((productId: string) => {
-    dispatch(lowerCountProductTC(productId))
+  const functionManager = useCallback((
+    arg: string | BasketProductType,
+    funcTC: (arg: any) => AppThunk) => {
+    dispatch(funcTC(arg))
   }, [])
 
 
@@ -45,7 +38,8 @@ export const Basket = () => {
     navigate('/')
   }
 
-  if (basketLength) {
+
+  if (basket.items.length) {
     return (
       <section className={s.basket}>
         <ArrowButton onClickHandler={navigateToContent}/>
@@ -56,29 +50,24 @@ export const Basket = () => {
           {basket.items.map((product: BasketProductType) => {
 
             const onClickButtonDelete = () => {
-              deleteProduct(product.id)
-            }
-            const onClickButtonAdd = () => {
-              addProduct(product)
-              console.log(product)
-            }
-            const onClickLowerCount = () => {
-              lowerCount(product.id)
+              functionManager(product.id, deleteBasketProductTC)
             }
 
+            const onClickButtonAdd = () => {
+              functionManager(product, addBasketProductTC)
+            }
+
+            const onClickLowerCount = () => {
+              functionManager(product.id, lowerCountProductTC)
+            }
 
             return (
               <BasketPizza key={product.id}
-                           count={product.count}
-                           id={product.id}
-                           price={product.price}
-                           urlPng={product.urlPng}
-                           urlWebp={product.urlWebp}
-                           title={product.title}
+                           data={product}
                            addProduct={onClickButtonAdd}
                            deleteProduct={onClickButtonDelete}
                            onClickLowerCount={onClickLowerCount}
-                           sumProduct={product.count * product.price}
+                           sumProduct={sumProduct(product.count, product.price)}
               />
             )
           })}
@@ -107,10 +96,12 @@ export const Basket = () => {
         <ArrowButton onClickHandler={navigateToContent}/>
         <div className={s.title}>
           <h2>Корзина пуста ☹️</h2>
-          <p>Вероятней всего, вы не заказывали ещё пиццу. Для того, чтобы заказать пиццу, перейди на главную
+          <p className={s.emptySubtitle}>Вероятней всего, вы не заказывали ещё пиццу. Для того, чтобы заказать пиццу,
+            перейди на главную
             страницу.</p>
         </div>
       </section>
     )
   }
 };
+

@@ -1,12 +1,10 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import s from './App.module.scss'
-import {Header} from "../pages/header/Header";
+import {Header} from "../components/header/Header";
 import {Outlet} from "react-router-dom";
 
 
-
 export function App() {
-
 
   return (
     <div className={s.app}>

@@ -1,32 +1,22 @@
 import React from 'react';
 import s from './bascetPizza.module.scss'
+import {BasketProductType} from "../../../commons/types";
 
 type BasketPizzaPropsType = {
-  id: string
-  title: string
-  price: number
-  urlPng: string
-  urlWebp: string
-  count: number
   deleteProduct: () => void
   addProduct: () => void
   onClickLowerCount: () => void
   sumProduct: number
   setSumBasket?: () => void
+  data: BasketProductType
 }
 
 export const BasketPizza: React.FC<BasketPizzaPropsType> = React.memo(({
-                                                                         id,
-                                                                         title,
-                                                                         price,
-                                                                         urlPng,
-                                                                         urlWebp,
+                                                                         data,
                                                                          deleteProduct,
-                                                                         count,
                                                                          addProduct,
                                                                          onClickLowerCount,
                                                                          sumProduct,
-                                                                         setSumBasket
                                                                        }) => {
 
 
@@ -37,11 +27,11 @@ export const BasketPizza: React.FC<BasketPizzaPropsType> = React.memo(({
               className={s.close}/>
       <div className={s.header}>
         <picture>
-          <source srcSet={urlWebp}/>
-          <img className={s.imgPizza} src={urlPng} alt={'картинка пиццы' + title}/>
+          <source srcSet={data.urlWebp}/>
+          <img className={s.imgPizza} src={data.urlPng} alt={'картинка пиццы' + data.title}/>
         </picture>
         <div className={s.description}>
-          <p className={s.title}>{title}</p>
+          <p className={s.title}>{data.title}</p>
           <p className={s.subtitle}>Описание</p>
         </div>
       </div>
@@ -55,12 +45,12 @@ export const BasketPizza: React.FC<BasketPizzaPropsType> = React.memo(({
           <button
             onClick={onClickLowerCount}
             className={s.button}
-            disabled={count <= 0}
+            disabled={data.count <= 0}
           >
             &minus;
           </button>
           <span
-            className={s.sum}>{count >= 0 ? count : 0}
+            className={s.sum}>{data.count >= 0 ? data.count : 0}
             </span>
           <button
             onClick={addProduct}

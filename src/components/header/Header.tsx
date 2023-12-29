@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import s from './header.module.scss'
-import logoIcon from './../../assets/icons/logo.svg'
-import {ButtonBasket} from "../../components/button/ButtonBascket/ButtonBasket";
+import logoIcon from '../../assets/icons/logo.svg'
+import {ButtonBasket} from "../button/ButtonBascket/ButtonBasket";
 import {useNavigate} from "react-router-dom";
 import {useAppDispatch, useAppSelector} from "../../store/store";
-import {getBasket} from "../../utils/selectors";
+import {getBasket} from "../../commons/selectors";
 import {fetchBasket} from "../../redusers/basketReduser";
 
 

@@ -1,10 +1,11 @@
 import React from 'react';
-import {ButtonFilter} from "../../components/button/ButtonFilter/ButtonFilter";
+import {ButtonFilter} from "../button/ButtonFilter/ButtonFilter";
 import s from './toolbar.module.scss'
-import {Select} from "../../components/select/Select";
+import {Select} from "../select/Select";
 import {fetchProductsTC, sortProductsPopularTC, sortProductsPriceTC} from "../../redusers/productsReduser";
 import {useAppDispatch} from "../../store/store";
-import {ProductSortType} from "../../types/types";
+import {ProductSortType} from "../../commons/types";
+
 
 export type SelectListType = {
   title: string,
@@ -13,6 +14,7 @@ export type SelectListType = {
 
 export const ToolBar = () => {
   const dispatch = useAppDispatch()
+
 
   const buttonsTitle = [
     {id: 1, title: 'Все', status: false, href: '#'},
@@ -33,7 +35,6 @@ export const ToolBar = () => {
     return (
       <li key={button.id} className={s.listItem}>
         <ButtonFilter
-          href={button.href}
           title={button.title}
           active={button.status}/>
       </li>

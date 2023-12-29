@@ -1,4 +1,4 @@
-import {BasketProductType} from "../types/types";
+import {BasketProductType} from "../commons/types";
 import {Dispatch} from "react";
 import {productsApi} from "../api/productsApi";
 import {ThunkAction} from "redux-thunk";
